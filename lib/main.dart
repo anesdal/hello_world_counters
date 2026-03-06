@@ -1,53 +1,20 @@
-// Copyright 2020-2025 The Hello World Writer. All rights reserved.
-// https://www.thehelloworldwriter.com
-//
-// Use of this source code is governed by an MIT-style license
-// that can be found in the LICENSE file.
-
 import 'package:flutter/material.dart';
-
-import 'common/strings.dart' as strings;
-import 'screens/home_screen.dart';
+import 'screens/manual_server_screen.dart'; // تأكد أن المسار صحيح لمجلد الـ Screens
 
 void main() {
-  runApp(const HelloWorldCountersApp());
+  runApp(const MyApp());
 }
 
-/// The app widget.
-class HelloWorldCountersApp extends StatelessWidget {
-  const HelloWorldCountersApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: strings.appName,
-
-      // A black and white theme to go with the app's colored counters
-      theme: ThemeData.from(
-        colorScheme: ColorScheme.light(
-          primary: Colors.black,
-          surface: Colors.white,
-          onSurface: Colors.black,
-          surfaceTint: Colors.white,
-          primaryContainer: Colors.white,
-          onPrimaryContainer: Colors.black,
-          outlineVariant: Colors.grey.shade200,
-        ),
-      ),
-
-      darkTheme: ThemeData.from(
-        colorScheme: ColorScheme.dark(
-          primary: Colors.white,
-          surface: Colors.black,
-          onSurface: Colors.white,
-          surfaceTint: Colors.black,
-          primaryContainer: Colors.black,
-          onPrimaryContainer: Colors.white,
-          outlineVariant: Colors.grey.shade800,
-        ),
-      ),
-      home: const HomeScreen(),
+      title: 'IPTV Player Pro',
+      theme: ThemeData.dark(), // ثيم داكن مناسب لتطبيقات المشاهدة
+      home: const ManualServerScreen(), // هذه هي الشاشة الأولى التي سيراها المستخدم
     );
   }
 }
